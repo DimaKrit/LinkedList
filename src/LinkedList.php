@@ -131,26 +131,28 @@ class LinkedList
      * @return bool
      */
 
-    public function deleteAt($at)
-    {
-        if ($this->head !== null) {
-            $previous = null;
-            $current = $this->head;
-            while ($current->getNext() !== null) {
-                if ($current->getValue() === $at) {
-                    if ($previous === null) {
-                        $this->head = $current->getNext();
-                    } else {
-                        $current->setPrevious($current->getNext());
-                    }
-                    return true;
-                }
-                $previous = $current;
-                $current = $current->getNext();
-            }
-        }
-        return false;
-    }
+	public function deleteAt($at)
+	{
+		if ($this->head !== null) {
+			$previous = null;
+			$current = $this->head;
+			while ($current->getNext() !== null) {
+				if ($current->getValue() === $at) {
+					if ($previous === null) {
+						$this->head = $current->getNext();
+					} else {
+
+						$previous->setNext($current->getNext());
+					}
+					return true;
+				}
+				$previous = $current;
+
+				$current = $current->getNext();
+			}
+		}
+		return false;
+	}
 
 
     /**
