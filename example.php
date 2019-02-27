@@ -15,7 +15,7 @@ $linkedList->insertAfterAt('new item1' ,'new item10');
 
 $linkedList->insertBeforeAt('new item3' ,'new item104');
 
-//$linkedList->deleteAt('new item3');
+$linkedList->deleteAt('new item3');
 
 //die(var_dump($linkedList->search(4)));
 
